@@ -5,13 +5,13 @@
 // @grant        none
 // @version      1.0
 // @description  Hide instagram's singup pop up and layover
-// @author       Sean Philippi
+// @author       kesto
 // ==/UserScript==
 const attachMessage = () => {
-    console.log('attaching')
     const header = document.querySelector('.NXc7H');
     const message = document.createElement('DIV');
-    message.innerHTML = '<span>scroll down to see the annoying pop up disappear</span>';
+    message.setAttribute('style', 'text-align: center; font-weight: bold; color: red; margin-top: .5rem;');
+    message.innerHTML = '<span>scroll down fast to trigger the annoying pop up, so it can be removed!</span>';
     header.appendChild(message);
 }
 
@@ -40,6 +40,8 @@ const hideInstaLightbox = () => {
 
 window.setTimeout(() => {
     hideInstaLightbox();
-}, 5000);
+}, 5500);
 
-hideFooterBanner();
+window.setTimeout(() =>{
+    hideFooterBanner();
+}, 1000);
